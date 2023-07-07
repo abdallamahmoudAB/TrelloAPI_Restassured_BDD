@@ -18,7 +18,7 @@ public class DeleteBoard {
                 .queryParam("token", ConfigLoader.getToken())
 
                 .when()
-                .get(ConfigLoader.getBaseUrl()+"{id}")
+                .delete(ConfigLoader.getBaseUrl()+"{id}")
 
                 .then()
                 .statusCode(200);
