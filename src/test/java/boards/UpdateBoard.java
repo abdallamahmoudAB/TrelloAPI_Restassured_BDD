@@ -2,6 +2,7 @@ package boards;
 import static io.restassured.RestAssured.*;
 import org.testng.ITestContext;
 import org.testng.annotations.Test;
+import utils.ConfigLoader;
 
 public class UpdateBoard {
 
@@ -21,7 +22,7 @@ public class UpdateBoard {
                 .body(payload)
 
                 .when()
-                .get("https://api.trello.com/1/boards/")
+                .get(ConfigLoader.getBaseUrl()+"{id}")
 
                 .then()
                 .statusCode(200);

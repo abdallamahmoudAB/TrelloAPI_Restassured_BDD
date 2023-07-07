@@ -1,6 +1,7 @@
 package boards;
 
 import org.testng.ITestContext;
+import utils.ConfigLoader;
 
 import static io.restassured.RestAssured.given;
 
@@ -16,7 +17,7 @@ public class DeleteBoard {
                 .queryParam("token", "ATTA3f18be01c7abe8f9aeb273b1d0e5ffead5c100ef50a76fba02324f8bb92dd2bc9B7E1F59")
 
                 .when()
-                .get("https://api.trello.com/1/boards/")
+                .get(ConfigLoader.getBaseUrl()+"{id}")
 
                 .then()
                 .statusCode(200);
