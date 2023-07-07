@@ -21,6 +21,7 @@ public class GetBoard {
 
                 .then()
                 .statusCode(200)
+                .log().body()
                 .body("name", equalTo("TrelloAPITest"));
 
 
