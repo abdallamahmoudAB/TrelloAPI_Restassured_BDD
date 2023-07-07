@@ -14,12 +14,12 @@ public class CreateBoard {
 
         String boardID = given()
                 .contentType(ContentType.JSON)
-                .queryParam("name", ConfigLoader.getBaseUrl())
+                .queryParam("name", "TrelloAPITest")
                 .queryParam("key", ConfigLoader.getKey())
                 .queryParam("token", ConfigLoader.getToken())
 
                 .when()
-                .post("https://api.trello.com/1/boards/")
+                .post(ConfigLoader.getBaseUrl())
                 .jsonPath().get("id");
 
         context.setAttribute("board_ID", boardID);
