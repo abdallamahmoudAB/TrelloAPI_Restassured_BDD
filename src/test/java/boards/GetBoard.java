@@ -4,16 +4,17 @@ import static org.hamcrest.Matchers.*;
 import org.testng.ITestContext;
 import org.testng.annotations.Test;
 import utils.ConfigLoader;
+import utils.ContextAttribute;
 
 public class GetBoard {
 
     @Test
     public void getBoardByID(ITestContext context){
 
-        String boardID = (String) context.getAttribute("board_ID");
+//        String boardID = (String) context.getAttribute("board_ID");
 
         given()
-                .pathParam("id",boardID)
+                .pathParam("id", ContextAttribute.getBoardID(context))
                 .queryParam("key", ConfigLoader.getKey())
                 .queryParam("token", ConfigLoader.getToken())
 
