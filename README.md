@@ -38,10 +38,8 @@ ___________________________________
   - through testng.xml
   - through pom.xml within intellij
   - through pom.xml in terminal
-  - through Jenkins using -> https://7a72-185-61-69-81.ngrok-free.app/job/TrelloAPIAutomation/
+  - through Jenkins
 
-    ## Improvements to implement:
-    Creating docker container for packaging the application with all it's components, then ship it all out as one unit to eliminates the friction between different environment.
 
 
 
